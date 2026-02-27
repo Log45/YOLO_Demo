@@ -3,3 +3,4 @@ supervision
 torch
 opencv-python
 numpy
+ffmpeg-python
