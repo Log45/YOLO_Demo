@@ -2,3 +2,9 @@
 .venv/
 .vscode/
 *.pt
+*.DS_Store
+
+*/build/*
+*/build
+
+*.onnx

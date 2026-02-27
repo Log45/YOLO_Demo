@@ -5,16 +5,16 @@ from ultralytics import YOLO
 model = YOLO('yolov8l.pt') 
 model.fuse() 
 
-box_annotator = sv.BoundingBoxAnnotator()
+box_annotator = sv.BoxAnnotator()
 label_annotator = sv.LabelAnnotator()
 
-cap = cv2.VideoCapture("roblox.mp4")
+cap = cv2.VideoCapture(1)
 fps = cap.get(cv2.CAP_PROP_FPS)
 w = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
 h = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
 fourcc = cv2.VideoWriter.fourcc(*'mp4v')
 
-out = cv2.VideoWriter(filename= "output.mp4", fourcc= fourcc, fps=30, frameSize=(1280, 720))
+out = cv2.VideoWriter(filename= "output.mp4", fourcc=fourcc, fps=int(fps), frameSize=(int(w), int(h)))
 
 try:
     while True:
